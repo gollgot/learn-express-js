@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Créer une page
+{% endblock %}
+
+
+{% block content %}
+
+	<h2>Créer une page</h2>
+
+	<form method="post" action="/pages">
+		<input type="text" name="pageName">
+		<input type="submit" value="Sauver" >
+	</form>
+
+{% endblock %}

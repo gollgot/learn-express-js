@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Toutes les pages
+{% endblock %}
+
+
+{% block content %}
+	<h2>Toutes les pages</h2>
+
+	<ul>
+		{% for page in pages %}
+			<li>{{ page.name }} - {{ page.id }}</li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}
