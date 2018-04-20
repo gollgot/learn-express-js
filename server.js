@@ -1,10 +1,10 @@
-var express = require("express");
-var nunjucks = require("nunjucks");
-var bodyParser = require('body-parser');
-var homeController = require('./controllers/homeController');
-var pagesController = require('./controllers/pagesController');
+const express = require("express");
+const nunjucks = require("nunjucks");
+const bodyParser = require('body-parser');
+const homeRoutes = require('./routes/home');
+const pagesRoutes = require('./routes/pages');
 
-var app = express();
+const app = express();
 
 nunjucks.configure("views", {
 	autoescape: true,
@@ -12,14 +12,10 @@ nunjucks.configure("views", {
 });
 
 
-
-app.set('view engine', 'ejs');
-
-
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use('/', homeController);
-app.use('/pages', pagesController);
+app.use('/', homeRoutes);
+app.use('/pages', pagesRoutes);
 
 app.use(function(request, response, next){
 	response.setHeader("Content-Type", "text/plain");

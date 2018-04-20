@@ -1,6 +1,6 @@
-var express = require('express');
-var bodyParser = require('body-parser')
-var router = express.Router();
+const express = require('express');
+const bodyParser = require('body-parser')
+const router = express.Router();
 
 // pages.index
 router.get('/', function(req, res) {
