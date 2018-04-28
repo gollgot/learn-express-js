@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+	Tous les animaux
+{% endblock %}
+
+
+{% block content %}
+	<h2>Tous les animaux ({{ total }})</h2>
+
+	<ul>
+		{% for animal in animals %}
+			<li>{{ animal._source.genre }} - {{ animal._source.name }}</li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}
